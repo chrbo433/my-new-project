@@ -1,79 +1,133 @@
-<!-- This is the markdown template for the final project of the Building AI course, 
-created by Reaktor Innovations and University of Helsinki. 
-Copy the template, paste it to your GitHub README and edit! -->
-
-# Project Title
+# CaveRescueAI – AI-Assisted Cave Rescue System
 
 Final project for the Building AI course
 
 ## Summary
 
-Describe briefly in 2-3 sentences what your project is about. About 250 characters is a nice length! 
+CaveRescueAI is an AI-assisted decision support system designed to improve rescue operations in caves. By combining environmental sensor data, digital cave maps, and machine learning, the system helps rescue teams identify safer routes and estimate the probable location of trapped people.
 
+---
 
 ## Background
 
-Which problems does your idea solve? How common or frequent is this problem? What is your personal motivation? Why is this topic important or interesting?
+Cave rescue operations are among the most challenging emergency situations because rescuers often work in dark, narrow, flooded, and complex underground environments. Every minute is critical, and poor visibility or limited information can delay rescue efforts.
 
-This is how you make a list, if you need one:
-* problem 1
-* problem 2
-* etc.
+My motivation for this project comes from the increasing use of artificial intelligence in emergency management and disaster response. AI has the potential to support rescue teams by analyzing multiple sources of information much faster than humans alone.
 
+Problems addressed:
+
+* Difficult navigation inside cave systems.
+* Limited communication with trapped people.
+* Slow decision-making during rescue operations.
+* High risk for rescue personnel.
+* Limited visibility and environmental hazards.
+
+---
 
 ## How is it used?
 
-Describe the process of using the solution. In what kind situations is the solution needed (environment, time, etc.)? Who are the users, what kinds of needs should be taken into account?
+The system would be used by cave rescue teams before and during rescue missions.
 
-Images will make your README look nice!
-Once you upload an image to your repository, you can link link to it like this (replace the URL with file path, if you've uploaded an image to Github.)
-![Cat](https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg)
+The process would be:
 
-If you need to resize images, you have to use an HTML tag, like this:
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Sleeping_cat_on_her_back.jpg" width="300">
+1. Collect environmental data from IoT sensors placed inside the cave.
+2. Import cave maps and previous exploration data.
+3. Analyze sensor measurements such as temperature, humidity, oxygen concentration, CO₂ levels, and water level.
+4. Use AI models to estimate the safest rescue path and the most probable location of missing persons.
+5. Display recommendations on a GIS-based map for rescuers.
 
-This is how you create code examples:
+Potential users include:
+
+* Fire and Rescue Services
+* Cave Rescue Organizations
+* Civil Protection Agencies
+* Emergency Management Authorities
+
+Example system architecture:
+
 ```
-def main():
-   countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
-   pop = [5615000, 5439000, 324000, 5080000, 9609000]   # not actually needed in this exercise...
-   fishers = [1891, 2652, 3800, 11611, 1757]
-
-   totPop = sum(pop)
-   totFish = sum(fishers)
-
-   # write your solution here
-
-   for i in range(len(countries)):
-      print("%s %.2f%%" % (countries[i], 100.0))    # current just prints 100%
-
-main()
+Sensors → AI Model → Risk Assessment → GIS Map → Rescue Team
 ```
 
+---
 
 ## Data sources and AI methods
-Where does your data come from? Do you collect it yourself or do you use data collected by someone else?
-If you need to use links, here's an example:
-[Twitter API](https://developer.twitter.com/en/docs)
 
-| Syntax      | Description |
-| ----------- | ----------- |
-| Header      | Title       |
-| Paragraph   | Text        |
+Possible data sources:
+
+* Cave maps from national speleological organizations
+* Environmental IoT sensors
+* Historical cave rescue reports
+* Weather information
+* Digital Elevation Models (DEM)
+* Indoor positioning data (where available)
+
+Possible AI methods:
+
+* Classification (safe / unsafe routes)
+* Pathfinding algorithms (A*)
+* Decision Trees
+* Random Forest
+* Neural Networks
+* Anomaly Detection
+* Geographic Information Systems (GIS)
+
+Example dataset:
+
+| Feature | Description |
+|----------|-------------|
+| Temperature | Cave temperature (°C) |
+| Humidity | Relative humidity (%) |
+| Oxygen | Oxygen concentration (%) |
+| CO₂ | Carbon dioxide level |
+| Water level | Flooding risk |
+| Distance | Distance from entrance |
+| Passage width | Width of cave passage |
+
+---
 
 ## Challenges
 
-What does your project _not_ solve? Which limitations and ethical considerations should be taken into account when deploying a solution like this?
+The system cannot replace professional rescue teams.
+
+Limitations include:
+
+* Lack of real-time data.
+* GPS does not work underground.
+* Sensor failures.
+* Complex cave geometries.
+* Ethical responsibility remains with human rescuers.
+
+The AI should only provide recommendations rather than making autonomous decisions.
+
+---
 
 ## What next?
 
-How could your project grow and become something even more? What kind of skills, what kind of assistance would you  need to move on? 
+Future improvements could include:
 
+* Integration with drones and robotic explorers.
+* Thermal cameras for victim detection.
+* 3D cave mapping using LiDAR.
+* Digital twins of cave systems.
+* Real-time communication networks underground.
+* Reinforcement learning for optimal rescue planning.
+
+Additional expertise would be required in:
+
+* Artificial Intelligence
+* GIS
+* Robotics
+* Speleology
+* Emergency Management
+* IoT Systems
+
+---
 
 ## Acknowledgments
 
-* list here the sources of inspiration 
-* do not use code, images, data etc. from others without permission
-* when you have permission to use other people's materials, always mention the original creator and the open source / Creative Commons licence they've used
-  <br>For example: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
-* etc
+* University of Helsinki – Building AI Course
+* European Cave Rescue Association (ECRA)
+* National Speleological Organizations
+* OpenStreetMap
+* Scientific publications on cave rescue and emergency management
